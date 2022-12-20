@@ -1,1 +1,15 @@
 <h1>Créer un nouveau bookmark</h1>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Ajouter un film à ta liste <%= @list.name %></h3>
+        <%= simple_form_for [@list, @bookmark] do |f| %>
+          <%= f.input :comment, placeholder: 'Commentaire' %>
+          <%= f.association :movie, prompt: "Selectionne un film", input_html: {data: { controller: "tom-select"}}%>
+          <%= f.submit class: "btn btn-flat" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
